@@ -1,10 +1,10 @@
 # -------------------------------------------------------------------------------------------------
 #
 # layer for download and verifying
-FROM debian:buster-slim as graylog-downloader
+FROM ubuntu:latest as graylog-downloader
 
 ARG VCS_REF
-ARG GRAYLOG_VERSION
+ARG GRAYLOG_VERSION=4.1.1
 
 WORKDIR /tmp
 
@@ -153,13 +153,13 @@ HEALTHCHECK \
 
 # -------------------------------------------------------------------------------------------------
 
-LABEL maintainer="Graylog, Inc. <hello@graylog.com>" \
-      org.label-schema.name="Graylog Docker Image" \
-      org.label-schema.description="Official Graylog Docker image" \
+LABEL maintainer="iHelpU.Tech <support@ihelpu.tech>" \
+      org.label-schema.name="Graylog Kubernetes Image" \
+      org.label-schema.description="Fork of Official Graylog Docker image" \
       org.label-schema.url="https://www.graylog.org/" \
       org.label-schema.vcs-ref=${VCS_REF} \
-      org.label-schema.vcs-url="https://github.com/Graylog2/graylog-docker" \
-      org.label-schema.vendor="Graylog, Inc." \
+      org.label-schema.vcs-url="https://github.com/ihelpu-tech/graylog-docker" \
+      org.label-schema.vendor="Meinhart Solutions LLC" \
       org.label-schema.version=${GRAYLOG_VERSION} \
       org.label-schema.schema-version="1.0" \
       org.label-schema.build-date=${BUILD_DATE}
